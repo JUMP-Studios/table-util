@@ -1,15 +1,15 @@
 {
   "name": "@jumpstudios/table-util",
-	"version": "1.0.2",
-	"description": "A collection of utility functions for manipulating tables",
-	"main": "./out/init.lua",
-	"keywords": [
-		"table",
-		"roblox",
-		"typescript",
-		"roblox-ts",
-		"ts"
-	],
+  "version": "1.0.3",
+  "description": "A collection of utility functions for manipulating tables",
+  "main": "./out/init.lua",
+  "keywords": [
+    "table",
+    "roblox",
+    "typescript",
+    "roblox-ts",
+    "ts"
+  ],
   "author": "Icejiynn",
   "license": "MIT",
   "scripts": {
