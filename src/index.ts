@@ -1,3 +1,5 @@
-const Event = import("./event").expect().default;
+const Table = {
+	reconcile: import("./reconcile").expect().default,
+};
 
-export = Event;
+export = Table;
