@@ -1,5 +1,1 @@
-const Table = {
-	reconcile: import("./reconcile").expect().default,
-};
-
-export = Table;
+export * as Table from "./table"

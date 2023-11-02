@@ -1,7 +1,17 @@
 import Object from "@rbxts/object-utils";
 import { isTable } from "./utility";
 
-export default function reconcile<O extends TableType = {}, N extends TableType = {}>(
+type MergeResult<O extends TableType, N extends TableType> = O extends unknown[]
+	? N extends unknown[]
+		? unknown[]
+		: O & N
+	: N extends unknown[]
+	? N & O
+	: O & N;
+
+const undefinedValue = "S¢"
+
+function reconcile<O extends TableType = {}, N extends TableType = {}>(
 	t1: O,
 	t2: N,
 	overwriteValues?: boolean,
@@ -14,7 +24,7 @@ export default function reconcile<O extends TableType = {}, N extends TableType 
 					N
 				>[keyof MergeResult<O, N>];
 			} else {
-				t1[key as keyof O] = value as O[keyof O];
+				t1[key as keyof O] = (value === undefinedValue ? undefined : value )as O[keyof O];
 			}
 		}
 	} else {
@@ -32,3 +42,7 @@ export default function reconcile<O extends TableType = {}, N extends TableType 
 
 	return t1 as MergeResult<O, N>;
 }
+
+export {reconcile, undefinedValue}
+
+
